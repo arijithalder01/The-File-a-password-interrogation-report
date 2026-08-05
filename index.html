@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The File — how fast could they crack your password?</title>
+<meta name="description" content="Type a password and read the interrogation report: character makeup, entropy, and how long seven different attackers would take to break it. Nothing leaves your browser." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<main class="folder">
+
+  <div class="folder-tab">CASE FILE №<span id="caseNumber">0000</span></div>
+
+  <header class="file-header">
+    <p class="eyebrow">an interrogation report, conducted entirely in your browser</p>
+    <h1>THE FILE ON<br />YOUR PASSWORD</h1>
+    <p class="dek">Type below. Nothing is sent anywhere — every line of this report is written on your device, and forgotten the moment you leave.</p>
+  </header>
+
+  <section class="input-section">
+    <label for="pwInput" class="field-label">01 — SUSPECT STATEMENT</label>
+    <div class="input-row">
+      <span class="prompt-caret">&gt;</span>
+      <input id="pwInput" type="password" autocomplete="new-password" spellcheck="false" placeholder="start typing your password…" />
+      <button id="toggleVisibility" class="ghost-btn" type="button" aria-label="Show password">SHOW</button>
+    </div>
+    <div class="meter-row">
+      <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+      <span class="meter-label" id="meterLabel">AWAITING STATEMENT</span>
+    </div>
+  </section>
+
+  <div id="leakBanner" class="leak-banner hidden">
+    <span class="stamp stamp-red big-stamp">ON THE LEAK LIST</span>
+    <p>Every attacker in this report already has this exact password memorized. It doesn't matter how long it would theoretically take to guess — nobody has to guess it.</p>
+  </div>
+
+  <section class="dossier-grid">
+    <div class="dossier-card">
+      <h2>02 — SUSPECT PROFILE</h2>
+      <ul id="profileList" class="profile-list"></ul>
+    </div>
+    <div class="dossier-card">
+      <h2>03 — ENTROPY READOUT</h2>
+      <div class="entropy-readout">
+        <span class="big-number" id="entropyBits">0</span>
+        <span class="unit">bits of entropy</span>
+      </div>
+      <p class="entropy-note" id="entropyNote">Keyspace: —</p>
+    </div>
+  </section>
+
+  <section class="interrogation-log">
+    <h2>04 — INTERROGATION LOG <span class="log-caption">seven suspects, one statement</span></h2>
+    <div id="logEntries" class="log-entries"></div>
+  </section>
+
+  <footer class="file-footer">
+    <p>Crack-time estimates are illustrative order-of-magnitude figures for an offline attack against a poorly-hashed password — a worst-case scenario. A well-hashed, salted password (the kind any competent service should use) is far slower to attack than this report assumes. Treat this as a way to compare passwords against each other, not a literal countdown.</p>
+    <p class="file-footer-signature">No analytics. No storage. No network requests. View source if you don't believe it.</p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

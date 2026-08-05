@@ -4,6 +4,9 @@ A password strength tool that skips the boring meter and tells you a story inste
 
 Styled like a dark, minimal case file: typewriter type, rubber-stamp verdicts (`COMPROMISED` / `HELD`), a suspect profile checklist, and an entropy readout. Everything runs client-side.
 
+
+Live demo: https://arijithalder01.github.io/The-File-a-password-interrogation-report
+
 ## Why it's honest, not just decorative
 
 - **Checks the leaked-password list first.** If your password is one of the most common ones ever breached, the report says so immediately — crack-time math is irrelevant if the attacker already has it memorized.
